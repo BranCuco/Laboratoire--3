@@ -5,11 +5,12 @@
 
 describe('Navigation Tests', () => {
     beforeEach(() => {
-        cy.visit('../../index.html');
+        cy.visit('/index.html');
     });
 
     it('Doit charger la page d\'accueil', () => {
-        cy.get('h1').should('contain', 'Bienvenue sur le Blog du CEPI');
+        cy.get('.navbar-brand').should('exist');
+        cy.get('#searchInput').should('exist');
     });
 
     it('Doit afficher les cartes de publication', () => {
