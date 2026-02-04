@@ -1,0 +1,22 @@
+{
+  "name": "blog-cepi",
+  "version": "1.0.0",
+  "description": "Blog du CEPI - Laboratoire #1",
+  "main": "index.html",
+  "scripts": {
+    "sass": "sass --watch scss:css",
+    "sass:build": "sass scss:css",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
+  },
+  "keywords": ["blog", "cepi", "bootstrap", "sass"],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^13.0.0",
+    "sass": "^1.69.0"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.0"
+  }
+}

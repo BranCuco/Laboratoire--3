@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détail de la Publication - Blog du CEPI</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="img/Logo.png" alt="CEPI Logo" class="logo-img">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Menu1</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Menu2</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Menu3</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Menu4</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link user-icon" href="#">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="8" r="4"></circle>
+                                <path d="M6 20c0-3.314 2.686-6 6-6s6 2.686 6 6"></path>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-8 mx-auto">
+                    <!-- Article Header -->
+                    <article class="blog-article">
+                        <!-- Article Image -->
+                        <img src="img/placeholder-detail.jpg" class="img-fluid mb-4" alt="Image de l'article">
+
+                        <header class="mb-4">
+                            <h1 class="display-4 mb-3">Titre de la Publication</h1>
+                            <div class="article-meta text-muted">
+                                <span>Publié le 28 janvier 2026</span> | 
+                                <span>Par Auteur</span>
+                            </div>
+                        </header>
+
+                        <!-- Article Content -->
+                        <div class="article-content">
+                            <p>Ceci est le contenu complet de la publication. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            
+                            <h2>Sous-titre</h2>
+                            <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+                            
+                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+
+                            <h2>Autre section</h2>
+                            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        </div>
+
+                        <!-- Comments Section -->
+                        <div class="comments-section mt-5 pt-4 border-top">
+                            <h3 class="mb-4">Commentaires</h3>
+                            
+                            <!-- Comment Form -->
+                            <div class="comment-form mb-5">
+                                <textarea class="form-control border-dark mb-3" rows="5" placeholder="Ajouter un commentaire..."></textarea>
+                                <div class="text-end">
+                                    <button class="btn btn-dark">Submit</button>
+                                </div>
+                            </div>
+
+                            <!-- Comments List -->
+                            <div class="comments-list">
+                                <!-- Comment 1 -->
+                                <div class="comment mb-4 pb-4 border-bottom">
+                                    <div class="d-flex gap-3">
+                                        <div class="comment-avatar">
+                                            <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor" class="text-dark">
+                                                <circle cx="12" cy="8" r="4"></circle>
+                                                <path d="M6 20c0-3.314 2.686-6 6-6s6 2.686 6 6"></path>
+                                            </svg>
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <p class="comment-text">Commentaire utile et pertinent sur l'article. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Comment 2 -->
+                                <div class="comment mb-4 pb-4 border-bottom">
+                                    <div class="d-flex gap-3">
+                                        <div class="comment-avatar">
+                                            <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor" class="text-dark">
+                                                <circle cx="12" cy="8" r="4"></circle>
+                                                <path d="M6 20c0-3.314 2.686-6 6-6s6 2.686 6 6"></path>
+                                            </svg>
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <p class="comment-text">Excellent article! Très informatif et bien structuré. Hâte de lire d'autres contenus similaires.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Back to Home -->
+                    <div class="mt-5">
+                        <a href="index.html" class="btn btn-secondary">← Retour à l'accueil</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <div class="social-links d-flex justify-content-center mb-3">
+                        <a href="#" class="text-light me-3">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18 2h-3a6 6 0 0 0-6 6v3H7v4h2v8h4v-8h3l1-4h-4V8a2 2 0 0 1 2-2h3z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-light me-3">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-light">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </a>
+                    </div>
+                    <p class="mb-2">Centre d'Expertise et de Perfectionnement en Informatique</p>
+                    <p class="mb-0">© 2026</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/articles.js"></script>
+    <script src="js/detail.js"></script>
+</body>
+</html>
