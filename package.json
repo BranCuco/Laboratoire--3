@@ -6,17 +6,34 @@
   "scripts": {
     "sass": "sass --watch scss:css",
     "sass:build": "sass scss:css",
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "dev": "tsc --watch",
+    "api": "json-server --watch db.json --port 3000",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run"
   },
-  "keywords": ["blog", "cepi", "bootstrap", "sass"],
+  "keywords": [
+    "blog",
+    "cepi",
+    "bootstrap",
+    "sass"
+  ],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^13.0.0",
+    "@types/jquery": "^3.5.33",
+    "@types/jqueryui": "^1.12.24",
+    "@types/node": "^25.2.3",
+    "cypress": "^13.17.0",
+    "jquery": "^4.0.0",
+    "jquery-ui": "^1.14.2",
+    "json-server": "^1.0.0-beta.6",
+    "pdf-parse": "^2.4.5",
     "sass": "^1.69.0"
   },
   "dependencies": {
-    "bootstrap": "^5.3.0"
+    "bootstrap": "^5.3.0",
+    "typescript": "^5.9.3"
   }
 }
