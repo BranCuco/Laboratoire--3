@@ -17,14 +17,15 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noImplicitReturns": true,
-    "removeComments": true
+    "removeComments": true,
+    "types": ["cypress", "node"]
   },
   "include": [
-    "js/**/*.ts"
+    "Ts/**/*.ts",
+    "cypress/**/*.ts"
   ],
   "exclude": [
     "node_modules",
-    "dist",
-    "cypress"
+    "dist"
   ]
 }
