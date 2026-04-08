@@ -1,4 +1,4 @@
-# Blog du CEPI — Laboratoire #3 (Version de remise)
+# Blog du CEPI — Laboratoire #3 
 
 ## 🎯 Objectif
 Migration progressive du blog du laboratoire précédent vers **React par composants**, tout en conservant l'architecture HTML existante.
@@ -42,7 +42,7 @@ L'intégration React est faite avec **CDN**:
 ## 📁 Structure (résumé)
 
 ```
-Laboratoire#2/
+Laboratoire#3/
 ├── pages/
 │   ├── index.html
 │   ├── detail.html
