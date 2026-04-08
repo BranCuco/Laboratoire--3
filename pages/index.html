@@ -15,45 +15,15 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">
-                <img src="img/Logo.png" alt="CEPI Logo" class="logo-img">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="index.html">Menu1</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Menu2</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Menu3</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Menu4</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link user-icon" href="#">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="12" cy="8" r="4"></circle>
-                                <path d="M6 20c0-3.314 2.686-6 6-6s6 2.686 6 6"></path>
-                            </svg>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <!-- React Root Header -->
+    <div id="header-root"></div>
 
     <!-- Main Content -->
     <main class="py-5">
         <div class="container">
+            <!-- React Root  -->
+            <div id="react-root" class="mb-4"></div>
+
             <!-- Search and Filter Bar -->
             <div class="row mb-5">
                 <div class="col-12 col-md-8">
@@ -153,40 +123,142 @@
         </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-dark text-light py-4 mt-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 text-center">
-                    <div class="social-links d-flex justify-content-center mb-3">
-                        <a href="#" class="text-light me-3">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M18 2h-3a6 6 0 0 0-6 6v3H7v4h2v8h4v-8h3l1-4h-4V8a2 2 0 0 1 2-2h3z"></path>
-                            </svg>
-                        </a>
-                        <a href="#" class="text-light me-3">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
-                            </svg>
-                        </a>
-                        <a href="#" class="text-light">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
-                                <circle cx="4" cy="4" r="2"></circle>
-                            </svg>
-                        </a>
-                    </div>
-                    <p class="mb-2">Centre d'Expertise et de Perfectionnement en Informatique</p>
-                    <p class="mb-0">© 2026</p>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <!-- React Root Footer -->
+    <div id="footer-root"></div>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- React CDN (ordre requis: React, ReactDOM, Babel) -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- Composant Header -->
+    <script type="text/babel">
+        function Header() {
+            return (
+                <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+                    <div className="container-fluid">
+                        <a className="navbar-brand" href="index.html">
+                            <img src="img/Logo.png" alt="CEPI Logo" className="logo-img" />
+                        </a>
+                        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                            <span className="navbar-toggler-icon"></span>
+                        </button>
+                        <div className="collapse navbar-collapse" id="navbarNav">
+                            <ul className="navbar-nav ms-auto">
+                                <li className="nav-item">
+                                    <a className="nav-link active" href="index.html">Menu1</a>
+                                </li>
+                                <li className="nav-item">
+                                    <a className="nav-link" href="#">Menu2</a>
+                                </li>
+                                <li className="nav-item">
+                                    <a className="nav-link" href="#">Menu3</a>
+                                </li>
+                                <li className="nav-item">
+                                    <a className="nav-link" href="#">Menu4</a>
+                                </li>
+                                <li className="nav-item">
+                                    <a className="nav-link user-icon" href="#">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                            <circle cx="12" cy="8" r="4"></circle>
+                                            <path d="M6 20c0-3.314 2.686-6 6-6s6 2.686 6 6"></path>
+                                        </svg>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            );
+        }
+
+        const headerRoot = ReactDOM.createRoot(document.getElementById('header-root'));
+        headerRoot.render(<Header />);
+    </script>
+
+    <!-- Composant Footer -->
+    <script type="text/babel">
+        function Footer() {
+            return (
+                <footer className="bg-dark text-light py-4 mt-5">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-12 text-center">
+                                <div className="social-links d-flex justify-content-center mb-3">
+                                    <a href="#" className="text-light me-3">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M18 2h-3a6 6 0 0 0-6 6v3H7v4h2v8h4v-8h3l1-4h-4V8a2 2 0 0 1 2-2h3z"></path>
+                                        </svg>
+                                    </a>
+                                    <a href="#" className="text-light me-3">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
+                                        </svg>
+                                    </a>
+                                    <a href="#" className="text-light">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+                                            <circle cx="4" cy="4" r="2"></circle>
+                                        </svg>
+                                    </a>
+                                </div>
+                                <p className="mb-2">Centre d'Expertise et de Perfectionnement en Informatique</p>
+                                <p className="mb-0">© 2026</p>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            );
+        }
+
+        const footerRoot = ReactDOM.createRoot(document.getElementById('footer-root'));
+        footerRoot.render(<Footer />);
+    </script>
+
+    <!-- Composant BlogCard (test avec props) -->
+    <script type="text/babel">
+        function BlogCard(props) {
+            const { id, title, summary, image } = props;
+
+            return (
+                <div className="col-12 col-md-6 col-lg-4">
+                    <div className="card blog-card h-100">
+                        <img src={image} className="card-img-top" alt={title} />
+                        <div className="card-body">
+                            <h5 className="card-title">{title}</h5>
+                            <p className="card-text">{summary}</p>
+                        </div>
+                        <div className="card-footer bg-transparent">
+                            <a href={`detail.html?id=${id}`} className="btn btn-primary btn-sm">Lire plus</a>
+                        </div>
+                    </div>
+                </div>
+            );
+        }
+
+        function BlogCardDemo() {
+            return (
+                <div>
+                    <h2 className="h5 mb-3">Test composant React: BlogCard</h2>
+                    <div className="row g-4">
+                        <BlogCard
+                            id={1}
+                            title="Whitehorse n’avait pas vu autant de neige en décembre depuis plus de 40 ans"
+                            summary="Résumé de la première publication du blog..."
+                            image="https://images.radio-canada.ca/q_auto,w_700/v1/ici-info/16x9/yukon-neige-voiture.jpg"
+                        />
+                    </div>
+                </div>
+            );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('react-root'));
+        root.render(<BlogCardDemo />);
+    </script>
     <!-- Scripts -->
     <script src="dist/js/api.js"></script>
     <script src="dist/js/main.js"></script>

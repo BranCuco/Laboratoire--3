@@ -1,105 +1,99 @@
-# Blog du CEPI - Laboratoire #1
+# Blog du CEPI - Laboratoire #3
 
 ## 🎯 Description
-Création d'un site Web de blog responsif pour le projet du cours 420-KVA-JQ Web transactionnel.
+Dans ce laboratoire, le projet du laboratoire #3 est **refactorisé avec React** pour améliorer l'organisation, la maintenabilité et l'évolutivité de l'application.
 
-## 📋 Spécifications
+L'intégration est demandée de façon **progressive**, en utilisant les **CDN React + ReactDOM + Babel** dans les pages HTML existantes.
 
-### Technologies
+## 🛠️ Technologies
 - **HTML5**
-- **SASS** (compilation en CSS)
+- **React (CDN)**
+- **ReactDOM (CDN)**
+- **Babel (CDN, JSX via `text/babel`)**
+- **TypeScript / JavaScript existant**
+- **jQuery / jQuery UI** (code existant à migrer progressivement)
 - **Bootstrap 5.3**
-- **Cypress** (tests)
+- **JSON Server** (API locale)
+- **Cypress** (tests E2E)
 
-### Palette de couleurs
-- Negro: #222831
-- Gris oscuro: #393E46
-- Cyan: #00ADB5
-- Gris claro: #EEEEEE
+## 📌 Objectif du laboratoire
+Migrer l'interface en composants React sans casser le comportement actuel.
 
-### Tipografía
-- Títulos: Lora
-- Contenido: Open Sans
+### Ordre d'intégration recommandé
+1. Ajouter les librairies CDN dans chaque page, dans cet ordre:
+   1) React
+   2) ReactDOM
+   3) Babel
+2. Ajouter une racine React (`<div id="root"></div>`)
+3. Tester avec un rendu simple « Hello world »
+4. Migrer graduellement le HTML statique vers les composants
 
-## 📁 Structure du projet
+## 🧩 Composants à créer
+- `Header`
+- `Footer`
+- `BlogCard` (props)
+- `BlogList` (chargement API avec `useEffect`)
+- `BlogDetails` (reçoit `articleId` via props + `useEffect`)
+- `Comment` (props)
+- `CommentList` (reçoit `articleId` + `useEffect`)
+- `AddComment` (POST vers API)
+- `Blog` (conteneur page détail: récupère l'ID via URL)
+
+## 📁 Structure actuelle du projet
 
 ```
-Blog-CEPI/
-├── index.html              # Page d'accueil
-├── detail.html             # Page de détail de publication
-├── package.json            # Dépendances du projet
-├── cypress.config.js       # Configuration Cypress
+Laboratoire#2/
+├── pages/
+│   ├── index.html
+│   ├── detail.html
+│   └── add.html
+├── Ts/
+│   ├── api.ts
+│   ├── main.ts
+│   ├── detail.ts
+│   └── add.ts
+├── db.json
+├── dist/js/
 ├── scss/
-│   └── styles.scss         # Feuille de style SASS
 ├── css/
-│   └── styles.css          # CSS compilé (généré)
-├── js/
-│   └── main.js             # JavaScript principal
-├── img/                    # Images du site
 ├── cypress/
-│   └── e2e/
-│       └── navigation.cy.js # Tests de navigation
-└── README.md
+└── package.json
 ```
 
-## 🚀 Installation et démarrage
+## 🚀 Démarrage
 
-### 1. Installer les dépendances
+### 1) Installer les dépendances
 ```bash
 npm install
 ```
 
-### 2. Compiler SASS
+### 2) Démarrer l'API
 ```bash
-npm run sass
+npm run api
 ```
 
-Pour le mode watch (recompile à chaque changement):
+### 3) Compiler TypeScript (si nécessaire)
 ```bash
-npm run sass:watch
+npm run build
 ```
 
-### 3. Démarrer un serveur local
-Utiliser Live Server ou tout autre serveur local sur le port 5500.
+### 4) Ouvrir le site
+Démarrer un serveur local (ex: Live Server) et ouvrir les pages dans `pages/`.
 
-### 4. Lancer les tests Cypress
+## 🧪 Tests
 ```bash
 npm run cypress:open
 ```
-
-Ou en mode headless:
+ou
 ```bash
 npm run cypress:run
 ```
 
-## ✨ Fonctionnalités
-
-- ✅ Page d'accueil avec cartes de publications
-- ✅ Page de détail de publication
-- ✅ Navigation responsive (menu mobile)
-- ✅ Responsive design (mobile, tablet, desktop)
-- ✅ Tests de redirection avec Cypress
-- ✅ Styles personnalisés avec SASS
-
-## 📱 Responsive
-
-- **Mobile**: < 576px
-- **Tablet**: 576px - 768px
-- **Desktop**: > 768px
-
-## 🧪 Tests
-
-Les tests Cypress vérifient:
-- Chargement de la page d'accueil
-- Affichage des cartes de publication
-- Redirection vers page de détails
-- Redirection vers accueil
-- Navigation du navbar
+## 📝 Remarque
+Le laboratoire #3 se concentre sur la **migration vers React par composants**. Le code jQuery existant peut rester temporairement pendant la transition.
 
 ## 📝 Licence
-
 ISC
 
 ## 👤 Auteur
-
-Laboratoire #1 - 420-KVA-JQ
+Laboratoire #3 - 420-KVA-JQ
