@@ -57,6 +57,10 @@ describe('Tests AJAX - Laboratoire #2', (): void => {
 
         it('Doit afficher une boîte de dialogue de confirmation', (): void => {
             cy.visit('/add.html');
+
+            cy.window().then((win: Window): void => {
+                cy.stub(win, 'confirm').as('confirmStub').returns(false);
+            });
             
             // Remplir le formulaire
             cy.get('#title').type('Test Article');
@@ -67,14 +71,17 @@ describe('Tests AJAX - Laboratoire #2', (): void => {
             
             // Soumettre le formulaire
             cy.get('#addArticleForm').submit();
-            
-            // Vérifier que le dialogue jQuery UI apparaît
-            cy.get('.ui-dialog').should('be.visible');
-            cy.get('.ui-dialog-title').should('contain', 'Confirmer');
+
+            // Vérifier que la confirmation native est appelée
+            cy.get('@confirmStub').should('have.been.calledOnce');
         });
 
         it('Doit ajouter un article via l\'API', (): void => {
             cy.visit('/add.html');
+
+            cy.window().then((win: Window): void => {
+                cy.stub(win, 'confirm').returns(true);
+            });
             
             // Remplir le formulaire
             cy.get('#title').type('Nouvel Article de Test');
@@ -85,10 +92,6 @@ describe('Tests AJAX - Laboratoire #2', (): void => {
             
             // Soumettre
             cy.get('#addArticleForm').submit();
-            
-            // Confirmer dans le dialogue
-            cy.get('.ui-dialog').should('be.visible');
-            cy.contains('button', 'Confirmer').click();
             
             // Attendre la requête POST
             cy.wait('@postArticle');
@@ -161,14 +164,13 @@ describe('Tests AJAX - Laboratoire #2', (): void => {
         it('Ne doit pas accepter un commentaire vide', (): void => {
             cy.visit('/detail.html?id=1');
             cy.wait('@getArticle');
-            
-            // Essayer de soumettre sans texte
-            cy.get('#commentForm').submit();
-            
-            // Devrait afficher une alerte (HTML5 validation ou JavaScript)
+
             cy.on('window:alert', (text: string): void => {
                 expect(text).to.contains('commentaire');
             });
+            
+            // Essayer de soumettre sans texte
+            cy.get('#commentForm').submit();
         });
     });
 

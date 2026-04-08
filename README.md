@@ -1,45 +1,45 @@
-# Blog du CEPI - Laboratoire #3
+# Blog du CEPI — Laboratoire #3 (Version de remise)
 
-## 🎯 Description
-Dans ce laboratoire, le projet du laboratoire #3 est **refactorisé avec React** pour améliorer l'organisation, la maintenabilité et l'évolutivité de l'application.
+## 🎯 Objectif
+Migration progressive du blog du laboratoire précédent vers **React par composants**, tout en conservant l'architecture HTML existante.
 
-L'intégration est demandée de façon **progressive**, en utilisant les **CDN React + ReactDOM + Babel** dans les pages HTML existantes.
+L'intégration React est faite avec **CDN**:
+1. React
+2. ReactDOM
+3. Babel (`type="text/babel"`)
 
-## 🛠️ Technologies
-- **HTML5**
-- **React (CDN)**
-- **ReactDOM (CDN)**
-- **Babel (CDN, JSX via `text/babel`)**
-- **TypeScript / JavaScript existant**
-- **jQuery / jQuery UI** (code existant à migrer progressivement)
-- **Bootstrap 5.3**
-- **JSON Server** (API locale)
-- **Cypress** (tests E2E)
+## ✅ Fonctionnalités livrées
+- `Header` en React
+- `Footer` en React
+- `BlogCard` avec props
+- `BlogList` avec chargement API (`useEffect`)
+- Recherche + tri des articles (React state)
+- `BlogDetails` (chargement article par `id` URL)
+- `Comment` + `CommentList` (chargement commentaires)
+- `AddComment` (POST vers API)
+- Formulaire d'ajout d'article migré en React (POST)
 
-## 📌 Objectif du laboratoire
-Migrer l'interface en composants React sans casser le comportement actuel.
-
-### Ordre d'intégration recommandé
-1. Ajouter les librairies CDN dans chaque page, dans cet ordre:
-   1) React
-   2) ReactDOM
-   3) Babel
-2. Ajouter une racine React (`<div id="root"></div>`)
-3. Tester avec un rendu simple « Hello world »
-4. Migrer graduellement le HTML statique vers les composants
-
-## 🧩 Composants à créer
+## 🧩 Composants implémentés
 - `Header`
 - `Footer`
-- `BlogCard` (props)
-- `BlogList` (chargement API avec `useEffect`)
-- `BlogDetails` (reçoit `articleId` via props + `useEffect`)
-- `Comment` (props)
-- `CommentList` (reçoit `articleId` + `useEffect`)
-- `AddComment` (POST vers API)
-- `Blog` (conteneur page détail: récupère l'ID via URL)
+- `BlogCard`
+- `BlogList`
+- `BlogDetails`
+- `Comment`
+- `CommentList`
+- `AddComment`
+- `Blog` (conteneur de la page détail)
 
-## 📁 Structure actuelle du projet
+## 🛠️ Stack technique
+- HTML5
+- React + ReactDOM (CDN)
+- Babel Standalone (JSX dans les pages)
+- Bootstrap 5.3
+- JSON Server (API locale)
+- Cypress (tests E2E)
+- TypeScript legacy conservé dans `Ts/`
+
+## 📁 Structure (résumé)
 
 ```
 Laboratoire#2/
@@ -47,40 +47,45 @@ Laboratoire#2/
 │   ├── index.html
 │   ├── detail.html
 │   └── add.html
-├── Ts/
-│   ├── api.ts
-│   ├── main.ts
-│   ├── detail.ts
-│   └── add.ts
 ├── db.json
-├── dist/js/
-├── scss/
 ├── css/
+├── scss/
+├── Ts/
+├── dist/js/
 ├── cypress/
+├── cypress.config.js
 └── package.json
 ```
 
-## 🚀 Démarrage
+## 🚀 Exécution locale
 
-### 1) Installer les dépendances
+### 1) Installer
 ```bash
 npm install
 ```
 
-### 2) Démarrer l'API
+### 2) API (JSON Server)
 ```bash
 npm run api
 ```
+API: `http://localhost:3000`
 
-### 3) Compiler TypeScript (si nécessaire)
+### 3) SCSS (optionnel)
 ```bash
-npm run build
+npm run sass:build
+```
+ou watch:
+```bash
+npm run sass
 ```
 
 ### 4) Ouvrir le site
-Démarrer un serveur local (ex: Live Server) et ouvrir les pages dans `pages/`.
+Lancer un serveur local (Live Server) et ouvrir:
+- `pages/index.html`
+- `pages/detail.html?id=1`
+- `pages/add.html`
 
-## 🧪 Tests
+## 🧪 Tests Cypress
 ```bash
 npm run cypress:open
 ```
@@ -89,11 +94,16 @@ ou
 npm run cypress:run
 ```
 
-## 📝 Remarque
-Le laboratoire #3 se concentre sur la **migration vers React par composants**. Le code jQuery existant peut rester temporairement pendant la transition.
+Configuration E2E actuelle:
+- `baseUrl`: `http://localhost:5500/pages`
+
+## ℹ️ Notes importantes
+- Le dossier `dist/js` contient du JavaScript compilé depuis TypeScript (`Ts/`).
+- La migration React actuelle est faite **dans les pages HTML** via Babel (pas en `.tsx`).
+- Si `npm run api` retourne `EADDRINUSE`, le port 3000 est déjà occupé (ou serveur déjà lancé).
 
 ## 📝 Licence
 ISC
 
 ## 👤 Auteur
-Laboratoire #3 - 420-KVA-JQ
+Laboratoire #3 — 420-KVA-JQ

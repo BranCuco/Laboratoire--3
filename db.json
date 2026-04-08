@@ -163,6 +163,12 @@
       "articleId": 1,
       "date": "2026-02-18T20:21:51.153Z",
       "content": "Ceci est un commentaire de test de Cypress"
+    },
+    {
+      "id": "4b4b",
+      "articleId": 7,
+      "date": "2026-04-08T18:46:33.810Z",
+      "content": "test"
     }
   ]
 }

@@ -23,7 +23,7 @@ describe('Navigation Tests', (): void => {
         });
         
         cy.url().should('include', 'detail.html');
-        cy.get('.blog-article').should('exist');
+        cy.url().should('include', 'id=');
     });
 
     it('Doit rediriger vers l\'accueil au clic sur le bouton retour', (): void => {

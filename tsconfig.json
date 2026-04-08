@@ -18,7 +18,7 @@
     "noUnusedParameters": true,
     "noImplicitReturns": true,
     "removeComments": true,
-    "types": ["cypress", "node"]
+    "types": ["cypress", "node", "jquery", "jqueryui"]
   },
   "include": [
     "Ts/**/*.ts",
